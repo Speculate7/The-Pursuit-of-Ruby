@@ -15,7 +15,7 @@ end_date = x_axis.max
 
 graph.labels = { 0 => start_date, 50 => middle_date, 100 => end_date }
 
-graph.data('', charttest.collect { |col5| col5['date'].to_i }, '#B75582')
+graph.data('Open', charttest.collect { |col5| col5['date'].to_i }, '#B75582')
 
 graph.x_axis_label = 'Items'
 graph.y_axis_label = 'Day'
