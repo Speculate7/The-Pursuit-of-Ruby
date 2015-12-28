@@ -13,12 +13,17 @@
 # and
 #   about_triangle_project_2.rb
 #
-def triangle(a, b, c)
-  	return :equilateral  if a == b && b == c
-    return :isosceles    if a == b || b == c || a == c
-    return :scalene
-end
 
+def triangle(a, b, c)
+  	return :equilateral if a == b && b == c
+  	return :isosceles if a == b || b == c || a == c
+  	return :scalene
+   	raise TriangleError, "crash into a ditch" if a = 0 
+  	raise TriangleError, "crash into a ditch" if a == b && b != c
+	raise TriangleError, "crash into a ditch" if a != c 
+end
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
 end
+
+	
