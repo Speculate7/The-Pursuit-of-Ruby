@@ -38,10 +38,8 @@ def score(dice)
   #matching sets
   total = 0
   while dice.length > 0 
-    ones_count = dice.count(1)
-    if ones_count == 3
-      total =+ ones_count == 3 ? 1000 : ones_count * 100
-    else
+      total =+ dice.count(1) >= 3 ? 1000 + dice.count(1) * 100
+    
       total =+ dice.count(5)*50
       total =+ dice.count(1)*100
       #score =+ dice.count {|x| x%2 == 0} == 3 ? leftovers * 100
